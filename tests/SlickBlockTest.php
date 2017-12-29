@@ -11,7 +11,7 @@ class SlickBlockTest extends  SlickTestCase
 
     public function testEmpty()
     {
-        $this->assertSame('<div class="container"><div class="slider slick-slider" itemscope itemtype="http://schema.org/ImageGallery"></div></div>', $this->renderFrontendNoSpace());
+        $this->assertSame('<div class="slider slick-slider" itemscope itemtype="http://schema.org/ImageGallery"></div>', $this->renderFrontendNoSpace());
     }
 
     public function files_are_equal($a, $b)
