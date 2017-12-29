@@ -81,8 +81,8 @@ class Module extends \luya\base\Module
             return $params['slickConfig'];
         }
 
-        if (array_key_exists( 'slickConfigWidget', $params) && $params['slickConfigWidget'] === true) {
-            return $params['slickConfigWidget'];
+        if (array_key_exists( 'slickConfig', $params) && $params['slickConfig'] === false) {
+            return false;
         }
 
         /*

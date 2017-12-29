@@ -22,7 +22,6 @@ class SlickWidget extends \luya\base\Widget
         SlickAsset::register($this->getView());
         ResourcesAsset::register($this->getView());
 
-        var_dump(array_key_exists( 'slickConfigWidget', $this->view->params));
         if (Module::slickConfig() != false && !array_key_exists( 'slickConfigWidget', $this->view->params)) {
 
             $this->slickConfig = Module::slickConfig();
