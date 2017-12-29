@@ -21,9 +21,7 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 before_script:
-  - cd luya-ext-slick && mkdir assets
-
-before_script:
+  - mkdir assets
   - mysql -e 'create database myapp_test;'
   - mysql -u root myapp_test < tests/data/sql/1.0.0.sql
 
