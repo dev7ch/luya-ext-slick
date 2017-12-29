@@ -89,7 +89,7 @@ class SlickBlock extends BaseSlickBlock
         $respImagesInput = $parent['responsive_images'];
         $respImages = [];
         foreach ($respImagesInput as $item) {
-           $respImages[] = [
+            $respImages[] = [
                 'breakpoint'  => isset($item['breakpoint']) ? $item['breakpoint'] : '0',
                 'orientation' => isset($item['orientation']) ? $item['orientation'] : 'portrait',
                 'image'       => isset($item['image']) ? BlockHelper::imageUpload($item['image'], false, true) : null,

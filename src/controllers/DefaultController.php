@@ -1,4 +1,5 @@
 <?php
+
 namespace dev7ch\slick\controllers;
 
 use yii\web\Controller;
@@ -9,5 +10,4 @@ class DefaultController extends Controller
     {
         return $this->render('index');
     }
-
 }
