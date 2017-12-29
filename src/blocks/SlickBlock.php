@@ -84,7 +84,7 @@ class SlickBlock extends BaseSlickBlock
         ];
     }
 
-    protected function ResponsiveImages($parent)
+    protected function responsiveImages($parent)
     {
         $respImagesInput = $parent['responsive_images'];
         $respImages = [];
@@ -100,7 +100,7 @@ class SlickBlock extends BaseSlickBlock
         return $respImages;
     }
 
-    protected function Images()
+    protected function images()
     {
         $imagesInput = $this->getVarValue('images', []);
         $images = [];
@@ -111,7 +111,7 @@ class SlickBlock extends BaseSlickBlock
                 'title'             => isset($item['title']) ? $item['title'] : '',
                 'link'              => isset($item['link']) ? BlockHelper::linkObject($item['link']) : null,
                 'isPublished'       => isset($item['isPublished']) ? true : false,
-                'responsive_images' => $this->ResponsiveImages($item),
+                'responsive_images' => $this->responsiveImages($item),
 
             ];
         }
@@ -125,7 +125,7 @@ class SlickBlock extends BaseSlickBlock
     public function extraVars()
     {
         return [
-            'images' => $this->Images(),
+            'images' => $this->images(),
         ];
     }
 

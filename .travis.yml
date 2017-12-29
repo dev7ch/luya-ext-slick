@@ -21,6 +21,9 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 before_script:
+  - mkdir assets
+
+before_script:
   - mysql -e 'create database myapp_test;'
   - mysql -u root myapp_test < tests/data/sql/1.0.0.sql
 
