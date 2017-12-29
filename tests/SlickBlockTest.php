@@ -2,6 +2,7 @@
 namespace cmstests\src\frontend\blocks;
 
 use dev7ch\slick\tests\SlickTestCase;
+use dev7ch\slick\SlickWidget;
 use Yii;
 
 class SlickBlockTest extends  SlickTestCase
@@ -43,9 +44,19 @@ class SlickBlockTest extends  SlickTestCase
     public function testWidgetView() {
 
 
-        $is = ['view' => fopen(dirname(__FILE__, 2) . '/src/views/SlickSlider.php', 'rb')];
-        $should = ['view' => fopen(dirname(__FILE__) . '/data/views/SlickSlider.php', 'rb')];
-        $this->assertSameSize($is, $should);
+        $is = SlickWidget::widget([
+            'images'            => [],
+            'slickConfigWidget' => [
+                'infinite'       => 'true',
+                'slidesToShow'   => '1',
+                'slidesToScroll' => '1',
+                'autoplay'       => 'true',
+                'autoplaySpeed'  => '5000',
+            ],
+        ]);
+
+        $should = $is;
+        $this->assertSame($is, $should);
 
     }
 
