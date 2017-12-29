@@ -62,9 +62,7 @@ class Module extends \luya\base\Module
 
     /**
      * Load Slick.js options via LUYA configs as $params.
-     *
-     * @return bool | string | array
-     *
+     * @return bool|string|array
      * @internal param array $params
      */
     public static function slickConfig()
