@@ -24,7 +24,7 @@ class Module extends \luya\base\Module
     /**
      * Translations.
      *
-     * @param $message
+     * @param string $message
      * @param array $params
      * @param $category
      *
