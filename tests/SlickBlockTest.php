@@ -10,6 +10,112 @@ class SlickBlockTest extends  SlickTestCase
 {
     public $blockClass = 'dev7ch\slick\blocks\SlickBlock';
 
+    public function testEmpty()
+    {
+        $this->assertSame('<div class="slider slick-slider" itemscope itemtype="http://schema.org/ImageGallery"></div>', $this->renderFrontendNoSpace());
+    }
+
+    public function files_are_equal($a, $b)
+    {
+        // Check if file size is different
+        if(filesize($a) !== filesize($b))
+            return false;
+
+        // Check if content is different
+        $ah = fopen($a, 'rb');
+        $bh = fopen($b, 'rb');
+
+        $result = true;
+        while(!feof($ah))
+        {
+            if(fread($ah, 8192) != fread($bh, 8192))
+            {
+                $result = false;
+                break;
+            }
+        }
+
+        fclose($ah);
+        fclose($bh);
+
+        return $result;
+    }
+
+    public function testWidgetView() {
+
+        $this->block->addExtraVar('images', $this->images());
+        $this->block->addExtraVar('image_1', ['source' => dirname(__DIR__) . 'tests/data/images/1.jpg']);
+        $this->block->addExtraVar('image_2', ['source' => dirname(__DIR__) . 'tests/data/images/2.jpg']);
+        $this->block->addExtraVar('image_3', ['source' => dirname(__DIR__) . 'tests/data/images/3.jpg']);
+
+        $this->block->setVarValues([
+            'images' => [
+                [
+                    'title' => 'Test 1',
+                    'alt' => 'alt-text',
+                    'link' => \Yii::$app->basePath,
+                    'image' =>  $this->block->getExtraValue('image_1') ,
+                    'responsive_images' => [
+                        [
+                            'image' => $this->block->getExtraValue('image_1'),
+                            'image_hd' => $this->block->getExtraValue('image_1'),
+                            'breakpoint' => '680px',
+                            'orientation' => 'landscape'
+                        ],
+                        [
+                            'image' => $this->block->getExtraValue('image_2'),
+                            'image_hd' => $this->block->getExtraValue('image_2'),
+                            'breakpoint' => '1020px',
+                            'orientation' => 'landscape'
+                        ],
+                    ]
+                ],
+                [
+                    'title' => 'Test 2',
+                    'alt' => 'alt-text-2',
+                    'link' => \Yii::$app->basePath,
+                    'image' => $this->block->getExtraValue('image_2'),
+                    'responsive_images' => [
+                        [
+                            'image' => $this->block->getExtraValue('image_3'),
+                            'image_hd' => $this->block->getExtraValue('image_3'),
+                            'breakpoint' => '680px',
+                            'orientation' => 'landscape'
+                        ],
+                        [
+                            'image' => $this->block->getExtraValue('image_1'),
+                            'image_hd' => $this->block->getExtraValue('image_1'),
+                            'breakpoint' => '1020px',
+                            'orientation' => 'landscape'
+                        ],
+                    ]
+                ]
+            ]
+        ]);
+
+
+        $is =
+            SlickWidget::widget([
+            'images'            => $this->block->getExtraValue('images'),
+            'slickConfigWidget' => [
+                'infinite'       => 'true',
+                'slidesToShow'   => '1',
+                'slidesToScroll' => '1',
+                'autoplay'       => 'true',
+                'autoplaySpeed'  => '5000',
+            ],
+        ]);
+
+        $should = $is;
+        $this->assertSame($is, $should);
+    }
+
+    public function testRender() {
+
+        $is = $this->block->renderFrontend();
+        $should = $is;
+        $this->assertSame($is, $should);
+    }
 
     protected function images()
     {
@@ -46,109 +152,5 @@ class SlickBlockTest extends  SlickTestCase
         return $respImages;
     }
 
-
-    public function testEmpty()
-    {
-        $this->assertSame('<div class="slider slick-slider" itemscope itemtype="http://schema.org/ImageGallery"></div>', $this->renderFrontendNoSpace());
-    }
-
-    public function files_are_equal($a, $b)
-    {
-        // Check if file size is different
-        if(filesize($a) !== filesize($b))
-            return false;
-
-        // Check if content is different
-        $ah = fopen($a, 'rb');
-        $bh = fopen($b, 'rb');
-
-        $result = true;
-        while(!feof($ah))
-        {
-            if(fread($ah, 8192) != fread($bh, 8192))
-            {
-                $result = false;
-                break;
-            }
-        }
-
-        fclose($ah);
-        fclose($bh);
-
-        return $result;
-    }
-
-    public function testWidgetView() {
-
-
-        $this->block->addExtraVar('images', $this->images());
-
-        $this->block->setVarValues([
-            'images' => [
-                [
-                    'title' => 'Test 1',
-                    'alt' => 'alt-text',
-                    'link' => \Yii::$app->basePath,
-                    'image' =>  $this->block->getExtraValue('images', ['source' => 'image']) ,
-                    'responsive_images' => [
-                        [
-                            'image' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/1.jpg', false, true),
-                            'image_hd' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/1.jpg', false, true),
-                            'breakpoint' => '680px',
-                            'orientation' => 'landscape'
-                        ],
-                        [
-                            'image' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/2.jpg', false, true),
-                            'image_hd' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/2.jpg', false, true),
-                            'breakpoint' => '1020px',
-                            'orientation' => 'landscape'
-                        ],
-                    ]
-                ],
-                [
-                    'title' => 'Test 2',
-                    'alt' => 'alt-text-2',
-                    'link' => \Yii::$app->basePath,
-                    'image' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/2.jpg', false, true),
-                    'responsive_images' => [
-                        [
-                            'image' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/1.jpg', false, true),
-                            'image_hd' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/1.jpg', false, true),
-                            'breakpoint' => '680px',
-                            'orientation' => 'landscape'
-                        ],
-                        [
-                            'image' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/2.jpg', false, true),
-                            'image_hd' => BlockHelper::imageUpload(dirname(__DIR__) . 'tests/data/images/2.jpg', false, true),
-                            'breakpoint' => '1020px',
-                            'orientation' => 'landscape'
-                        ],
-                    ]
-                ]
-            ]
-        ]);
-
-
-        $is = SlickWidget::widget([
-            'images'            => $this->block->getExtraValue('images'),
-            'slickConfigWidget' => [
-                'infinite'       => 'true',
-                'slidesToShow'   => '1',
-                'slidesToScroll' => '1',
-                'autoplay'       => 'true',
-                'autoplaySpeed'  => '5000',
-            ],
-        ]);
-
-        $should = $is;
-        $this->assertSame($is, $should);
-    }
-
-    public function testRender() {
-
-        $is = $this->block->renderFrontend();
-        $should = $is;
-        $this->assertSame($is, $should);
-    }
 
 }
