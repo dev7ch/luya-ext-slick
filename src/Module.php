@@ -25,14 +25,16 @@ class Module extends \luya\base\Module
     /**
      * Translations.
      *
-     * @param string $message
-     * @param array  $params
+     * @param $message
+     * @param array $params
+     * @param $category
+     * @internal param unknown $language
      * @return string
      */
 
-    public static function t($message, array $params = [])
+    public static function t($message, array $params = [], $category = 'slick')
     {
-        return parent::baseT('slick', $message, $params);
+        return parent::baseT($category, $message, $params);
     }
 
     /**
@@ -59,7 +61,7 @@ class Module extends \luya\base\Module
     /**
      * Load Slick.js options via LUYA configs as $params.
      *
-     * @return string | array | bool
+     * @return  boolean | string | array
      * @internal param array $params
      *
      */
@@ -81,19 +83,10 @@ class Module extends \luya\base\Module
             return $params['slickConfig'];
         }
 
-        if (array_key_exists( 'slickConfig', $params) && $params['slickConfig'] === false) {
-            return null;
+        if (array_key_exists( 'slickConfig', $params) && is_bool($params['slickConfig'] === false)) {
+            return false;
         }
-
-        /*
-         * Configure your slider as needed, see http://kenwheeler.github.io/slick/#settings
-         *
-         * 'slickConfig' supports php arrays and path to public config file in json format.
-         *
-         * 'slickConfig => bool | string | array
-         *
-         */
-
+        
         return false;
     }
 }
