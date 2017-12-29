@@ -73,6 +73,7 @@ class SlickBlock extends BaseSlickBlock
                 ]],
             ],
             'cfgs' => [
+                // in progress
                 ['var' => 'cssBackground', 'label' => 'Bild via CSS darstellen', 'type' => self::TYPE_CHECKBOX],
                 ['var' => 'positionTop', 'label' => 'Position vertikal', 'type' => self::TYPE_TEXT, 'placeholder' => '50'],
                 ['var' => 'positionLeft', 'label' => 'Position horizontal', 'type' => self::TYPE_TEXT, 'placeholder' => '50'],

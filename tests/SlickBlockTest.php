@@ -43,6 +43,20 @@ class SlickBlockTest extends  SlickTestCase
 
     public function testWidgetView() {
 
+        $this->block->setVarValues(['images' =>
+            [
+                'title' => 'Test',
+                'alt' => 'alt-text',
+                'link' => \Yii::$app->basePath,
+                'image' => '',
+                'responsive_images' => [
+                    'image' => '',
+                    'image_hd' => '',
+                    'breakpoint' => '680px',
+                    'orientation' => 'landscape'
+                ]
+            ]
+        ]);
 
         $is = SlickWidget::widget([
             'images'            => [],
