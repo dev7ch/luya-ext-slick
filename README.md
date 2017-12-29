@@ -1,10 +1,10 @@
 # Adaptive and responsive slider extension for LUYA
-[![stable](https://img.shields.io/github/tag/dev7ch/luya-ext-slider.svg?label=latest)](https://github.com/dev7ch/luya-ext-slider/tags)
+[![stable](https://img.shields.io/github/tag/dev7ch/luya-ext-slick.svg?label=stable)](https://github.com/dev7ch/luya-ext-slick/tags)
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
-[![Code Coverage](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slider/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slider/?branch=master)
-[![Code Quality](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slider/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slider/?branch=master)
-[![Total Downloads](https://poser.pugx.org/dev7ch/luya-ext-slider/downloads)](https://packagist.org/packages/dev7ch/luya-ext-slider)
-[![License](https://poser.pugx.org/dev7ch/luya-ext-slider/license)](https://packagist.org/packages/dev7ch/luya-ext-slider)
+[![Code Coverage](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/?branch=master)
+[![Code Quality](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/?branch=master)
+[![Total Downloads](https://poser.pugx.org/dev7ch/luya-ext-slick/downloads)](https://packagist.org/packages/dev7ch/luya-ext-slick)
+[![License](https://poser.pugx.org/dev7ch/luya-ext-slick/license)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 
 
 Implements the responsive SlickSlider from Ken Wheeler as a LUYA widget which can be used out of the box in the LUYA admin UI as draggable block extension in your project.
