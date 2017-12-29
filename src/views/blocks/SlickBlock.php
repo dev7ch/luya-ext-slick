@@ -6,7 +6,7 @@ $images = $this->extraValue('images');
 ?>
 
 <?= SlickWidget::widget([
-    'images'      => $images,
+    'images'            => $images,
     'slickConfigWidget' => [
         'infinite'       => 'true',
         'slidesToShow'   => '2',

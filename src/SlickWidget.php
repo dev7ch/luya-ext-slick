@@ -23,11 +23,8 @@ class SlickWidget extends \luya\base\Widget
         ResourcesAsset::register($this->getView());
 
         if (Module::slickConfig() != false) {
-
             $this->slickConfig = Module::slickConfig();
-
         } else {
-
             $this->slickConfig = $this->slickConfigWidget;
         }
 
@@ -35,7 +32,9 @@ class SlickWidget extends \luya\base\Widget
             "var slickSlider = $('.slick-slider').slick({"
                 .implode(', ',
                     array_map(
-                        function ($config, $option) { return sprintf('%s:%s', $option, $config);},
+                        function ($config, $option) {
+                            return sprintf('%s:%s', $option, $config);
+                        },
                         $this->slickConfig, array_keys($this->slickConfig)
                     )
                 ).

@@ -5,7 +5,7 @@ use dev7ch\slick\SlickWidget;
 ?>
 
 <?= SlickWidget::widget([
-    'images'      => [],
+    'images'            => [],
     'slickConfigWidget' => [
         'infinite'       => 'true',
         'slidesToShow'   => '1',
