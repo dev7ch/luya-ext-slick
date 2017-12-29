@@ -1,0 +1,6 @@
+/vendor/
+luya
+/.settings/
+/.buildpath
+/phpunit.xml
+.DS_Store

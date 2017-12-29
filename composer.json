@@ -1,0 +1,59 @@
+{
+    "name": "dev7ch/luya-ext-slider",
+    "description": "Responsive and adaptive Yii2 image slider for LUYA as Block, Widget and Module based and Slick.js",
+    "type": "luya-extension",
+    "keywords" : ["php", "luya", "extension", "yii2", "slick", "slider", "adaptive", "responsive"],
+    "license": "MIT",
+    "homepage" : "https://luya.io",
+    "minimum-stability": "dev",
+    "authors" : [
+        {
+            "name" : "Silvan Hahn",
+            "email" : "silvan@dev7.ch",
+            "homepage" : "https://github.com/dev7ch"
+        }
+    ],
+
+    "support" : {
+        "issues" : "https://github.com/dev7ch/luya-module-slider/issues"
+    },
+
+    "require" : {
+        "luyadev/luya-core" : "~1.0.0",
+        "luyadev/luya-module-cms" : "~1.0.0",
+        "bower-asset/slick-carousel":"^1.8.0",
+        "bower-asset/picturefill" : "~3.0.0"
+    },
+
+    "require-dev" : {
+        "luyadev/luya-testsuite" : "~1.0.0"
+    },
+
+    "autoload" : {
+        "psr-4" : {
+            "dev7ch\\slick\\" : "src/",
+            "dev7ch\\slick\\tests\\" : "tests/"
+        }
+    },
+
+    "config": {
+        "fxp-asset" : {
+            "pattern-skip-version": "(-build|-patch)",
+            "installer-paths": {
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
+
+    "extra": {
+        "luya" : {
+            "blocks" : [
+                "src/blocks"
+            ]
+        },
+
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

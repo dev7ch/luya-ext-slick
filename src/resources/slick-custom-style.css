@@ -1,0 +1,17 @@
+.slick-prev:before {
+    color: black;
+}
+.slick-next:before {
+    color: black;
+}
+
+.slick-slide:focus {
+    outline: 0;
+}
+
+.slick-slide img {
+/*  // Some hints which could be useful for image handling.
+    max-width: 100%;
+    object-fit: cover;
+ */
+}
