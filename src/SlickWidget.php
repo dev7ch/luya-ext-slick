@@ -22,11 +22,7 @@ class SlickWidget extends \luya\base\Widget
         SlickAsset::register($this->getView());
         ResourcesAsset::register($this->getView());
 
-        if (Module::slickConfig() !== false) {
-            $this->slickConfig = Module::slickConfig();
-        } else {
-            $this->slickConfig = $this->slickConfigWidget;
-        }
+        $this->slickConfig = $this->slickConfigWidget;
 
         $this->view->registerJs(
             "var slickSlider = $('.slick-slider').slick({"

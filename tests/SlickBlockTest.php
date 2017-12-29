@@ -16,7 +16,7 @@ class SlickBlockTest extends  SlickTestCase
 
     public function files_are_equal($a, $b)
     {
-        // Check if filesize is different
+        // Check if file size is different
         if(filesize($a) !== filesize($b))
             return false;
 
@@ -44,8 +44,8 @@ class SlickBlockTest extends  SlickTestCase
 
 
         $is = ['view' => fopen(dirname(__FILE__, 2) . '/src/views/SlickSlider.php', 'rb')];
-        $should = [ 'view' => fopen(dirname(__FILE__) . '/data/views/SlickSlider.php', 'rb')];
-        $this->assertSameSize($is,$should);
+        $should = ['view' => fopen(dirname(__FILE__) . '/data/views/SlickSlider.php', 'rb')];
+        $this->assertSameSize($is, $should);
 
     }
 

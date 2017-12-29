@@ -1,4 +1,5 @@
 /vendor/
+/assets
 luya
 /.settings/
 /.buildpath
