@@ -5,7 +5,7 @@
     "keywords" : ["php", "luya", "extension", "yii2", "slick", "slider", "adaptive", "responsive"],
     "license": "MIT",
     "homepage" : "https://luya.io",
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0.0",
     "authors" : [
         {
             "name" : "Silvan Hahn",
