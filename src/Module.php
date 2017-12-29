@@ -82,7 +82,7 @@ class Module extends \luya\base\Module
         }
 
         if (array_key_exists( 'slickConfig', $params) && $params['slickConfig'] === false) {
-            return false;
+            return null;
         }
 
         /*
