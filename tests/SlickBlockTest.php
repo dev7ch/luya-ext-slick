@@ -71,7 +71,13 @@ class SlickBlockTest extends  SlickTestCase
 
         $should = $is;
         $this->assertSame($is, $should);
+    }
 
+    public function testRender() {
+
+        $is = $this->block->renderFrontend();
+        $should = $is;
+        $this->assertSame($is, $should);
     }
 
 }
