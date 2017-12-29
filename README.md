@@ -28,21 +28,16 @@ This is an yii2 extension for [LUYA](https://luya.io/).
 Add the composer package to your project:
 
 ```bash
-composer require dev7ch/luya-ext-slider:~1.0.0
+composer require dev7ch/luya-ext-slick
 ```
 
 ## Usage
 
-Include the extension into your `configs/env.php` under the modules section:
+This LUYA extension is usable in 3 ways:
 
-```php
-'modules' => [
-    // ... other modules
-    'slick' => 'dev7ch\slick\Extension'
-],
-
-```
-Run the `./vendor/bin/luya import` command to make the Slick slider block available in the admin UI.
+- As draggable block out of the box in the LUYA admin UI.
+- As Extension in custom view files from blocks or modules.
+- As Module in the LUYA page adinistration.
 
 ### Block
 Simply drag and drop the block in the pages section in the admin UI to the desired place and add content to the slider.
@@ -130,9 +125,54 @@ The array of the single image includes an nested array for adaptive images, in p
  </div>
 ```
 
+### Module
+Include the module extension into your `configs/env.php` under the modules section:
+
+```php
+'modules' => [
+    // ... other modules
+    'slick' => [
+        'class' => 'dev7ch\slick\Module'
+    ]
+],
+
+```
+
+Further this extension let you configure the Slick.js slider js options directly from your, e.g. in `configs\env.php`, can be set via `$params` very simple:
+
+```php
+'modules' => [
+    // ... other modules
+    'slick' => [
+        'class' => 'dev7ch\slick\Module',
+        'params' => [
+            'slickConfig' => true // loads public_html/slick-config.json
+        ]
+    ]
+],
+```
+
+Adding your configs in different formats is supported, see the example below:
+
+```php
+'params' => [
+    'slickConfig' => true // Loads public_html/slick-config.json and override Slick.js configs from the widget.
+    'slickConfig' => false // default configs from the widget will be used.
+    'slickConfig' => 'custom/your-slick-config.json' // Loads public_html/custom/your-slick-config.json
+    'slickConfig' => [ 
+        'inifinte' => 'true',       
+        'autoplay' => 'true',
+        'autoplaySpeed' => '5000',    
+    ] // Provide the Slick.js configs as PHP array or include an array file from anywhere of your project.
+]
+```
+
+Finally run the `./vendor/bin/luya import` command to make the Slick slider block available in the admin UI.
+
+
 ## Collaboration
 
-[![StyleCI](https://styleci.io/repos/114746614/shield?branch=master)](https://styleci.io/repos/114746614)
+[![StyleCI](https://styleci.io/repos/115734060/shield?branch=master&style=flat)](https://styleci.io/repos/115734060)
 
 If you would like to contribute any thing, e.g. translations, you are very welcome.
 
