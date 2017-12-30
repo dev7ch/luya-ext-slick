@@ -1,38 +1,39 @@
 <?php
+
 namespace dev7ch\slick\tests;
 
-use luya\testsuite\cases\CmsBlockTestCase;
 use luya\base\Boot;
+use luya\testsuite\cases\CmsBlockTestCase;
 
 abstract class SlickTestCase extends CmsBlockTestCase
 {
     public function getConfigArray()
     {
         return [
-            'id' => 'slicktestblock',
-            'basePath' => dirname(__DIR__),
-            'siteTitle' => 'LUYA slick slider test',
-            'remoteToken' => 'testtoken',
+            'id'           => 'slicktestblock',
+            'basePath'     => dirname(__DIR__),
+            'siteTitle'    => 'LUYA slick slider test',
+            'remoteToken'  => 'testtoken',
             'defaultRoute' => 'admin',
-            'aliases' => [
-                '@runtime' => dirname(__DIR__) . '/runtime',
-                '@module' => dirname(__DIR__) . '/src',
+            'aliases'      => [
+                '@runtime' => dirname(__DIR__).'/runtime',
+                '@module'  => dirname(__DIR__).'/src',
             ],
 
-            'language' => 'en',
+            'language'   => 'en',
             'components' => [
                 'storage' => [
-                    'class' => 'luya\admin\filesystem\LocalFileSystem',
-                    'filesArray' => [],
+                    'class'       => 'luya\admin\filesystem\LocalFileSystem',
+                    'filesArray'  => [],
                     'imagesArray' => [],
                 ],
                 'db' => [
                     'class' => 'yii\db\Connection',
-                    'dsn' => 'sqlite::memory:',
+                    'dsn'   => 'sqlite::memory:',
                 ],
                 'menu' => [
                     'class' => 'luya\cms\Menu',
-                ]
+                ],
             ],
             'modules' => [
                 'slick' => [
@@ -49,28 +50,28 @@ abstract class SlickTestCase extends CmsBlockTestCase
 
         $this->app->menu->setLanguageContainer('en', [
             1 => [
-                'id' => '1',
-                'nav_id' => '1',
-                'lang' => 'en',
-                'link' => '/luya/envs/dev/public_html/',
-                'title' => 'Homepage',
-                'alias' => 'home',
-                'description' => '',
-                'keywords' => NULL,
-                'create_user_id' => '1',
-                'update_user_id' => '1',
+                'id'               => '1',
+                'nav_id'           => '1',
+                'lang'             => 'en',
+                'link'             => '/luya/envs/dev/public_html/',
+                'title'            => 'Homepage',
+                'alias'            => 'home',
+                'description'      => '',
+                'keywords'         => null,
+                'create_user_id'   => '1',
+                'update_user_id'   => '1',
                 'timestamp_create' => '1457091369',
                 'timestamp_update' => '1483367249',
-                'is_home' => '0',
-                'parent_nav_id' => '0',
-                'sort_index' => '1',
-                'is_hidden' => '0',
-                'type' => '1',
+                'is_home'          => '0',
+                'parent_nav_id'    => '0',
+                'sort_index'       => '1',
+                'is_hidden'        => '0',
+                'type'             => '1',
                 'nav_item_type_id' => '1',
-                'redirect' => false,
-                'module_name' => false,
-                'container' => 'default',
-                'depth' => 1,
+                'redirect'         => false,
+                'module_name'      => false,
+                'container'        => 'default',
+                'depth'            => 1,
             ],
         ]);
     }
