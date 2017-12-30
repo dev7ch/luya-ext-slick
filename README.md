@@ -42,7 +42,7 @@ composer require dev7ch/luya-ext-slick
 This LUYA extension is usable in 3 ways:
 
 - As draggable block out of the box in the LUYA admin UI.
-- As Extension in custom view files from blocks or modules.
+- As Widget in custom view files.
 
 ### Block
 Simply drag and drop the block in the pages section in the admin UI to the desired place and add content to the slider.
