@@ -16,7 +16,7 @@
                         <picture>
                             <?php foreach ($respImages as $item):
                                 $image = $item['image']->source;
-                                $imageHD = $item['image_hd'] ? $item['image_hd']->source : $item['image']->source;
+                                $imageHD = $item['imageHD'] ? $item['imageHD']->source : $item['image']->source;
                                 $orientation = $item['orientation'] ? ' and (orientation:'.$item['orientation'].')' : '';
                                 $breakpoint = $item['breakpoint'] ? ' media="(min-width:'.$item['breakpoint'].'px)'.$orientation.'"' : 'media="(min-width:0)'.$orientation.'"';
                             ?>

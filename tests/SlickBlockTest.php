@@ -102,4 +102,11 @@ class SlickBlockTest extends SlickTestCase
         $should = $is;
         $this->assertSame($is, $should);
     }
+
+    public function testCompareView()
+    {
+        $is = ['view' => fopen(dirname(__FILE__, 2) . '/src/views/SlickSlider.php', 'rb')];
+        $should = [ 'view' => fopen(dirname(__FILE__) . '/data/views/SlickSlider.php', 'rb')];
+        $this->assertSameSize($is,$should);
+    }
 }
