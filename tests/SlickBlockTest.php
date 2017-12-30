@@ -57,8 +57,8 @@ class SlickBlockTest extends SlickTestCase
                         'imageHD'     => $image_2,
                         'breakpoint'  => '1020px',
                         'orientation' => 'landscape',
-                    ],
-                ],
+                    ]
+                ]
             ],
             [
                 'title'             => 'Test 2',
@@ -71,12 +71,14 @@ class SlickBlockTest extends SlickTestCase
                         'imageHD'     => $image_3,
                         'breakpoint'  => '680px',
                         'orientation' => 'landscape',
-                    ],
-                ],
-            ],
+                    ]
+                ]
+            ]
         ];
 
-        $this->block->addExtraVar('images', $images);
+        $this->block->setVarValues([$images]);
+
+        $this->block->addExtraVar('fakeImages', $images);
 
         $is =
             SlickWidget::widget([
