@@ -39,15 +39,17 @@ composer require dev7ch/luya-ext-slick
 
 ## Usage
 
-This LUYA extension is usable in 3 ways:
+This LUYA extension is usable in two ways:
 
 - As draggable block out of the box in the LUYA admin UI.
-- As Widget in custom view files.
+- As PHP widget in custom view files with custom Slick.js settings.
 
 ### Block
-Simply drag and drop the block in the pages section in the admin UI to the desired place and add content to the slider.
+
+Simply drag and drop the block in the pages section in the admin UI to the desired place and add content to your new slick slider.
 
 ### Widget
+
 This extension is shipped as widget which means it can the reused in own custom views from modules or blocks.
 
 Example usage in a block view file:
@@ -130,51 +132,6 @@ The array of the single image includes an nested array for adaptive images, in p
  </div>
 ```
 
-### Module
-Include the module extension into your `configs/env.php` under the modules section:
-
-```php
-'modules' => [
-    // ... other modules
-    'slick' => [
-        'class' => 'dev7ch\slick\Module'
-    ]
-],
-
-```
-
-Further this extension let you configure the Slick.js slider js options directly from your, e.g. in `configs\env.php`, can be set via `$params` very simple:
-
-```php
-'modules' => [
-    // ... other modules
-    'slick' => [
-        'class' => 'dev7ch\slick\Module',
-        'params' => [
-            'slickConfig' => true // loads public_html/slick-config.json
-        ]
-    ]
-],
-```
-
-Adding your configs in different formats is supported, see the example below:
-
-```php
-'params' => [
-    'slickConfig' => true // Loads public_html/slick-config.json and override Slick.js configs from the widget.
-    'slickConfig' => false // default configs from the widget will be used.
-    'slickConfig' => 'custom/your-slick-config.json' // Loads public_html/custom/your-slick-config.json
-    'slickConfig' => [ 
-        'inifinte' => 'true',       
-        'autoplay' => 'true',
-        'autoplaySpeed' => '5000',    
-    ] // Provide the Slick.js configs as PHP array or include an array file from anywhere of your project.
-]
-```
-
-Finally run the `./vendor/bin/luya import` command to make the Slick slider block available in the admin UI.
-
-
 ## Collaboration
 
 [![StyleCI](https://styleci.io/repos/115734060/shield?branch=master&style=flat)](https://styleci.io/repos/115734060)
@@ -187,9 +144,17 @@ For usage of this repo inside your [LUYA env dev](https://github.com/luyadev/luy
 composer require bower-asset/slick-carousel:~1.8.0
 composer require bower-asset/picturefill:~3.0.0
 ```
+## Unit Tests
+
+1.) Create `assets` directory.
+2.) Run `./vendor/bin/phpunit tests/SlickBlockTest.php`, make sure compsor installed all needed dependencies correctly.
+
+To run the PHPUnit Test the directory 'assets' needs to be created in the root folder of this extension, e.g. `luya-env-dev/repos/luya-ext-slick/assets`.
+
+> The `assets` directory is in charge for test execution only and should  **not** be tracked by your VCS.
 
 ## Roadmap
 
-- add module functionality
-- adding all slick js options to admin UI
+- adding all slick js options to admin UI block cfgs
 - create admin UI block view
+- extend widget to work well with slick configs stiored .json or .php files.
