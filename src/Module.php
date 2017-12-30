@@ -25,7 +25,7 @@ class Module extends \luya\base\Module
      * Translations.
      *
      * @param string $message
-     * @param array $params
+     * @param array  $params
      * @param $category
      *
      * @internal param unknown $language
@@ -36,5 +36,4 @@ class Module extends \luya\base\Module
     {
         return parent::baseT($category, $message, $params);
     }
-
 }
