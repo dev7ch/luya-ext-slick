@@ -88,21 +88,21 @@ class SlickBlock extends BaseSlickBlock
     {
         $respImagesInput = $parent['responsive_images'];
         $respImages = [];
-        foreach ($respImagesInput as $item) {
+        foreach ($respImagesInput as $value) {
             $respImages[] = [
-                'breakpoint'  => isset($item['breakpoint']) ? $item['breakpoint'] : '0',
-                'orientation' => isset($item['orientation']) ? $item['orientation'] : 'portrait',
-                'image'       => isset($item['image']) ? BlockHelper::imageUpload($item['image'], false, true) : null,
-                'imageHD'     => isset($item['image_hd']) ? BlockHelper::imageUpload($item['image'], false, true) : null,
+                'breakpoint'  => isset($value['breakpoint']) ? $value['breakpoint'] : '0',
+                'orientation' => isset($value['orientation']) ? $value['orientation'] : 'portrait',
+                'image'       => isset($value['image']) ? BlockHelper::imageUpload($value['image'], false, true) : null,
+                'imageHD'     => isset($value['image_hd']) ? BlockHelper::imageUpload($value['image_hd'], false, true) : null,
             ];
         }
 
         return $respImages;
     }
 
-    protected function images()
+    public function images($image = false)
     {
-        $imagesInput = $this->getVarValue('images', []);
+        $imagesInput = $image != false ? $image : $this->getVarValue('images', []);
         $images = [];
         foreach ($imagesInput as $item) {
             $images[] = [
@@ -111,7 +111,7 @@ class SlickBlock extends BaseSlickBlock
                 'title'             => isset($item['title']) ? $item['title'] : '',
                 'link'              => isset($item['link']) ? BlockHelper::linkObject($item['link']) : null,
                 'isPublished'       => isset($item['isPublished']) ? true : false,
-                'responsive_images' => $this->responsiveImages($item),
+                'responsive_images' => isset($item['responsive_images']) ? $this->responsiveImages($item) : null,
 
             ];
         }

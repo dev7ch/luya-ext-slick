@@ -3,7 +3,7 @@
         $title = $image['title'];
         $link = $image['link'];
         $imageFallback = $image['image']->source;
-        $respImages = $image['responsive_images'];
+        $respImages = $image['responsive_images'] ? $image['responsive_images'] : '';
         $alt = $image['alt'];
     ?>
         <div class="slider-item">

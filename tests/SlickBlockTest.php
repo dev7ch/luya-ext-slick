@@ -2,7 +2,7 @@
 namespace cmstests\src\frontend\blocks;
 
 use dev7ch\slick\tests\SlickTestCase;
-use Yii;
+use dev7ch\slick\blocks\SlickBlock;
 
 class SlickBlockTest extends  SlickTestCase
 {
@@ -40,13 +40,96 @@ class SlickBlockTest extends  SlickTestCase
         return $result;
     }
 
-    public function testWidgetView() {
+    public function testWidgetView()
+    {
+        $image_1 = (object) ['source' => dirname(__DIR__).'tests/data/images/1.jpg'];
+        $image_2 = (object) ['source' => dirname(__DIR__).'tests/data/images/2.jpg'];
+        $image_3 = (object) ['source' => dirname(__DIR__).'tests/data/images/3.jpg'];
+        $link = (object) ['link' => 'test', 'title' => 'test'];
+
+        $testArray = ['images' =>
+            [
+                'title' => 'Test 1',
+                'alt' => 'alt-text',
+                'link' => $link,
+                'image' => $image_1,
+                'isPublished' => true,
+                'responsive_images' =>
+                [
+                    'image' => $image_2,
+                    'breakpoint' => '600',
+                    'orientation' => 'landscape',
+                ]
+
+            ],
+            [
+                'title' => 'Test 2',
+                'alt' => 'alt-text',
+                'link' => $link,
+                'image' => $image_1,
+                'isPublished' => true,
+                'responsive_images' =>
+
+                [
+                    'image' => $image_2,
+                    'breakpoint' => '600',
+                    'orientation' => 'landscape',
+                ]
+
+            ],
+        ];
+
+        $images = ['images' => [
+            'title'             => 'Test 1',
+            'alt'               => 'alt-text',
+            'link'              => $link,
+            'image'             => $image_1,
+            'responsive_images' => [
+                [
+                    'image'       => $image_1,
+                    'imageHD'     => $image_2,
+                    'breakpoint'  => '1020px',
+                    'orientation' => 'landscape',
+                ],
+            ],
+        ],
+            [
+                'title'             => 'Test 2',
+                'alt'               => 'alt-text-2',
+                'link'              => $link,
+                'image'             => $image_2,
+                'responsive_images' => [
+                    [
+                        'image'       => $image_3,
+                        'imageHD'     => $image_3,
+                        'breakpoint'  => '680px',
+                        'orientation' => 'landscape',
+                    ],
+                ],
+            ],
+        ];
 
 
-        $is = ['view' => fopen(dirname(__FILE__, 2) . '/src/views/SlickSlider.php', 'rb')];
-        $should = [ 'view' => fopen(dirname(__FILE__) . '/data/views/SlickSlider.php', 'rb')];
-        $this->assertSameSize($is,$should);
+        $this->block->setVarValues($images);
 
+        $this->block->addExtraVar('fakeImages', $images);
+
+        //$imagesResult = $this->block->getExtraValue('images');
+
+        $is = $this->renderFrontend(
+            SlickWidget::widget([
+                'images'            => $this->block->getExtraValue('fakeImages'),
+                'slickConfigWidget' => [
+                    'infinite'       => 'true',
+                    'slidesToShow'   => '1',
+                    'slidesToScroll' => '1',
+                    'autoplay'       => 'true',
+                    'autoplaySpeed'  => '5000',
+                ],
+            ]));
+
+        $should = $is;
+        $this->assertSame($is, $should);
     }
 
 }

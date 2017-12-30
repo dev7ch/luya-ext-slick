@@ -1,12 +1,9 @@
 <?php
 use dev7ch\slick\SlickWidget;
 
-$images = $this->extraValue('images');
 
-?>
-
-<?= SlickWidget::widget([
-    'images'            => $images,
+echo SlickWidget::widget([
+    'images'            => $this->extraValue('images'),
     'slickConfigWidget' => [
         'infinite'       => 'true',
         'slidesToShow'   => '2',
@@ -14,5 +11,4 @@ $images = $this->extraValue('images');
         'autoplay'       => 'true',
         'autoplaySpeed'  => '5000',
     ],
-])
-?>
+]);
