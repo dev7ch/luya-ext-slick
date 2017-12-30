@@ -57,8 +57,8 @@ class SlickBlockTest extends SlickTestCase
                         'imageHD'     => $image_2,
                         'breakpoint'  => '1020px',
                         'orientation' => 'landscape',
-                    ]
-                ]
+                    ],
+                ],
             ],
             [
                 'title'             => 'Test 2',
@@ -71,9 +71,9 @@ class SlickBlockTest extends SlickTestCase
                         'imageHD'     => $image_3,
                         'breakpoint'  => '680px',
                         'orientation' => 'landscape',
-                    ]
-                ]
-            ]
+                    ],
+                ],
+            ],
         ];
 
         $this->block->setVarValues([$images]);
@@ -105,8 +105,8 @@ class SlickBlockTest extends SlickTestCase
 
     public function testCompareView()
     {
-        $is = ['view' => fopen(dirname(__FILE__, 2) . '/src/views/SlickSlider.php', 'rb')];
-        $should = [ 'view' => fopen(dirname(__FILE__) . '/data/views/SlickSlider.php', 'rb')];
-        $this->assertSameSize($is,$should);
+        $is = ['view' => fopen(dirname(__FILE__, 2).'/src/views/SlickSlider.php', 'rb')];
+        $should = ['view' => fopen(dirname(__FILE__).'/data/views/SlickSlider.php', 'rb')];
+        $this->assertSameSize($is, $should);
     }
 }
