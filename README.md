@@ -25,10 +25,16 @@ This is an yii2 extension for [LUYA](https://luya.io/).
 
 ## Installation
 
-Add the composer package to your project:
+1. Add the composer package to your project:
 
 ```bash
 composer require dev7ch/luya-ext-slick
+```
+
+2. Run import
+
+```sh
+./luya import
 ```
 
 ## Usage
@@ -36,8 +42,7 @@ composer require dev7ch/luya-ext-slick
 This LUYA extension is usable in 3 ways:
 
 - As draggable block out of the box in the LUYA admin UI.
-- As Extension in custom view files from blocks or modules.
-- As Module in the LUYA page adinistration.
+- As Widget in custom view files.
 
 ### Block
 Simply drag and drop the block in the pages section in the admin UI to the desired place and add content to the slider.
