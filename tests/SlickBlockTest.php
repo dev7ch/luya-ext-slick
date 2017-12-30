@@ -78,11 +78,13 @@ class SlickBlockTest extends SlickTestCase
 
         $this->block->setVarValues([$images]);
 
+        $this->block->images();
+
         $this->block->addExtraVar('fakeImages', $images);
 
         $is =
             SlickWidget::widget([
-            'images'            => $this->block->getExtraValue('images'),
+            'images'            => $images,
             'slickConfigWidget' => [
                 'infinite'       => 'true',
                 'slidesToShow'   => '1',

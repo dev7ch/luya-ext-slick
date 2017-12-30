@@ -101,7 +101,7 @@ class SlickBlock extends BaseSlickBlock
         return $respImages;
     }
 
-    protected function images()
+    public function images()
     {
         $imagesInput = $this->getVarValue('images', []);
         $images = [];
