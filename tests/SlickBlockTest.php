@@ -80,7 +80,7 @@ class SlickBlockTest extends SlickTestCase
 
         $is =
             SlickWidget::widget([
-            'images'            =>  $this->block->getExtraValue('images'),
+            'images'            => $this->block->getExtraValue('images'),
             'slickConfigWidget' => [
                 'infinite'       => 'true',
                 'slidesToShow'   => '1',
