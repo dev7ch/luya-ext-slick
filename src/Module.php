@@ -25,16 +25,16 @@ class Module extends \luya\base\Module
     /**
      * Translations.
      *
-     * @param string $message
+     * @param string|\luya\base\unknown $message
      * @param array  $params
-     * @param $category
+     * @param string|\luya\base\unknown $category
      *
      * @internal param unknown $language
      *
-     * @return string
+     * @return string|\luya\base\unknown
      */
     public static function t($message, array $params = [], $category = 'slick')
     {
-        return parent::baseT($category, /** @scrutinizer ignore-type */ $message, $params);
+        return parent::baseT($category, $message, $params);
     }
 }
