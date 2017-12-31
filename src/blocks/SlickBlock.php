@@ -24,7 +24,7 @@ class SlickBlock extends BaseSlickBlock
     public $cacheExpiration = 3600;
 
     /**
-     * @return string|\luya\cms\base\BlockGroup
+     * @return string|\luya\cms\frontend\blockgroups\ProjectGroup
      */
     public function blockGroup()
     {
