@@ -157,7 +157,21 @@ class SlickBlockTest extends SlickTestCase
 
     public function testImages() {
 
-        $is = $this->block->images();
+        $testdata = ['images' =>
+            [
+                'image' => '',
+                'title' => 'hello you',
+                'alt' => 'alt-text',
+                'responsive_images' => [
+                    'image' => '',
+                    'imageHD' => '',
+                    'orientation' => 'landscape',
+                    'breakpoint' => '600'
+                ]
+            ]
+        ];
+
+        $is = $this->block->images($testdata);
 
         $should = $is;
         $this->assertSame($is, $should);
