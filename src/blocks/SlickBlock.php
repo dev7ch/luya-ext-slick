@@ -24,7 +24,7 @@ class SlickBlock extends BaseSlickBlock
     public $cacheExpiration = 3600;
 
     /**
-     * @return mixed
+     * @return luya\cms\base\BlockGroup
      */
     public function blockGroup()
     {
