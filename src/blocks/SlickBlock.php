@@ -85,7 +85,7 @@ class SlickBlock extends BaseSlickBlock
         ];
     }
 
-    protected function responsiveImages($parent)
+    public function responsiveImages($parent)
     {
         $respImagesInput = $parent['responsive_images'];
         $respImages = [];
@@ -101,9 +101,9 @@ class SlickBlock extends BaseSlickBlock
         return $respImages;
     }
 
-    public function images()
+    public function images($image = null)
     {
-        $imagesInput = $this->getVarValue('images', []);
+        $imagesInput = $image != null ? $image : $this->getVarValue('images', []);
         $images = [];
         foreach ($imagesInput as $item) {
             $images[] = [

@@ -61,7 +61,7 @@ class SlickBlockTest extends SlickTestCase
             ],
         ];
 
-        $this->block->setVarValues([$images]);
+        $this->block->setVarValues(array($images));
 
         $this->block->addExtraVar('fakeImages', $images);
 
@@ -139,9 +139,7 @@ class SlickBlockTest extends SlickTestCase
             ],
         ];
 
-
-        $is =
-            $this->renderFrontend(SlickWidget::widget([
+        $is = $this->renderFrontend(SlickWidget::widget([
                 'images'            => $images,
                 'slickConfigWidget' => [
                     'infinite'       => 'true',
@@ -151,9 +149,35 @@ class SlickBlockTest extends SlickTestCase
                     'autoplaySpeed'  => '5000',
                 ]
             ])
-            );
+        );
 
         $should = $is;
         $this->assertSame($is, $should);
+    }
+
+    public function testImages() {
+
+        $is = $this->block->images();
+
+        $should = $is;
+        $this->assertSame($is, $should);
+
+    }
+
+    public function testResponsiveImages() {
+
+        $testdata = ['responsive_images' =>
+            [
+                'image' => '',
+                'breakpoint' => '600px',
+                'orientation' => 'landscape',
+            ]
+        ];
+
+        $is = $this->block->responsiveImages($testdata);
+
+        $should = $is;
+        $this->assertSame($is, $should);
+
     }
 }
