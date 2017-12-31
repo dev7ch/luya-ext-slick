@@ -24,7 +24,7 @@ class SlickBlock extends BaseSlickBlock
     public $cacheExpiration = 3600;
 
     /**
-     * @return string
+     * @return mixed
      */
     public function blockGroup()
     {
