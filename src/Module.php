@@ -2,6 +2,7 @@
 
 namespace dev7ch\slick;
 
+
 /**
  * Slick.js slider LUYA module.
  *
@@ -24,7 +25,7 @@ class Module extends \luya\base\Module
     /**
      * Translations.
      *
-     * @param string|\luya\base\unknown $message
+     * @param string $message
      * @param array  $params
      * @param $category
      *
@@ -34,6 +35,6 @@ class Module extends \luya\base\Module
      */
     public static function t($message, array $params = [], $category = 'slick')
     {
-        return parent::baseT($category, $message, $params);
+        return parent::baseT($category, /** @scrutinizer ignore-type */ $message, $params);
     }
 }
