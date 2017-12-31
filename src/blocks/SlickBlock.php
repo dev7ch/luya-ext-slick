@@ -24,7 +24,7 @@ class SlickBlock extends BaseSlickBlock
     public $cacheExpiration = 3600;
 
     /**
-     * {@inheritdoc}
+     * @return string
      */
     public function blockGroup()
     {
@@ -36,7 +36,7 @@ class SlickBlock extends BaseSlickBlock
      */
     public function name()
     {
-        return 'Slider Block';
+        return 'Slick Slider';
     }
 
     /**
