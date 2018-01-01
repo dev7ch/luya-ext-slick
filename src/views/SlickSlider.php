@@ -9,7 +9,7 @@
         <div class="slider-item">
             <figure itemprop="associatedMedia" class="slider-image-container" itemscope itemtype="http://schema.org/ImageObject">
                 <?php if (!empty($link)): ?>
-                    <a href="<?= $link->link ?>" itemprop="contentUrl">';} ?>
+                    <a href="<?= $link->link ?>" itemprop="contentUrl">
                 <?php endif; ?>
                     <?php if (is_array($respImages) || is_object($respImages)): ?>
                         <!-- adaptive images -->
