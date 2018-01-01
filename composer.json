@@ -19,8 +19,8 @@
     },
 
     "require" : {
-        "luyadev/luya-core" : "~1.0.0",
-        "luyadev/luya-module-cms" : "~1.0.0",
+        "luyadev/luya-core" : "@dev",
+        "luyadev/luya-module-cms" : "@dev",
         "bower-asset/slick-carousel":"^1.8.0",
         "bower-asset/picturefill" : "~3.0.0"
     },

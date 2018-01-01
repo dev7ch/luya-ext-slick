@@ -4,7 +4,7 @@ namespace dev7ch\slick;
 
 
 /**
- * Slick.js slider LUYA module.
+ * Slick.js slider extension fot LUYA.
  *
  * @author Silvan Hahn <silvan@dev7.ch>
  */
@@ -25,13 +25,13 @@ class Module extends \luya\base\Module
     /**
      * Translations.
      *
-     * @param string|\luya\base\unknown $message
+     * @param string $message
      * @param array  $params
-     * @param string|\luya\base\unknown $category
+     * @param string $category
      *
-     * @internal param unknown $language
+     * @internal param string $language
      *
-     * @return string|\luya\base\unknown
+     * @return string
      */
     public static function t($message, array $params = [], $category = 'slick')
     {
