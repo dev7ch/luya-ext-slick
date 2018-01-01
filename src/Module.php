@@ -4,7 +4,7 @@ namespace dev7ch\slick;
 
 
 /**
- * Slick.js slider extension fot LUYA.
+ * Slick.js slider block and widget extension for LUYA.
  *
  * @author Silvan Hahn <silvan@dev7.ch>
  */
