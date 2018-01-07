@@ -14,4 +14,5 @@ $images = $this->extraValue('images');
         'autoplay'       => 'true',
         'autoplaySpeed'  => '5000',
     ],
+    'slickConfigFile' => 'slickConfig.php'
 ]);

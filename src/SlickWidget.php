@@ -15,6 +15,30 @@ class SlickWidget extends \luya\base\Widget
     public $images;
     public $slickConfig = [];
     public $slickConfigWidget;
+    public $slickConfigFile;
+
+
+    private function slickConfigFile() {
+
+        $file = dirname(__DIR__, 3) . '/' . $this->slickConfigFile;
+        $type = pathinfo($file);
+
+        if ($type['extension'] == 'php') {
+            $config = include $file;
+
+        } elseif ($type['extension'] == 'json') {
+            $json = file_get_contents($file);
+            $config = json_decode($json, true);
+        }
+
+        else {
+
+            throw new \luya\Exception('The file type .'. $type['extension'] . ' is currently not supported. Please use .php or .json files array for custom configuration of Slick.js.');
+        }
+
+        return $this->slickConfigFile = $config;
+    }
+
 
     public function init()
     {
@@ -22,7 +46,15 @@ class SlickWidget extends \luya\base\Widget
         SlickAsset::register($this->getView());
         ResourcesAsset::register($this->getView());
 
-        $this->slickConfig = $this->slickConfigWidget;
+        if ($this->slickConfigFile != null) {
+
+            $this->slickConfig = $this->slickConfigFile();
+
+        } else {
+
+            $this->slickConfig = $this->slickConfigWidget;
+            
+        }
 
         $this->view->registerJs(
             "var slickSlider = $('.slick-slider').slick({"
