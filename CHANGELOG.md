@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
-## [1.1.1] - 2018-2-01
+## [1.1.1] - 2018-01-02
 ### Added
 - Adding this CHANGELOG
 - Enable option to load Slick.js custom configs from file via the SlickWidget.
