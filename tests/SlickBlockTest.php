@@ -141,13 +141,11 @@ class SlickBlockTest extends SlickTestCase
 
         $is = $this->renderFrontend(SlickWidget::widget([
                 'images'            => $images,
-                'slickConfigWidget' => [
-                    'infinite'       => 'true',
-                    'slidesToShow'   => '1',
-                    'slidesToScroll' => '1',
-                    'autoplay'       => 'true',
-                    'autoplaySpeed'  => '5000',
-                ]
+                'slickConfigFile' => 'slickConfig.php'
+            ]),
+            SlickWidget::widget([
+                'images'            => $images,
+                'slickConfigFile' => 'slickConfig.json'
             ])
         );
 
