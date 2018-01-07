@@ -1,7 +1,8 @@
 # Adaptive and responsive slider extension for LUYA
 [![Latest Stable Version](https://poser.pugx.org/dev7ch/luya-ext-slick/v/stable)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
-[![Coverage Status](https://coveralls.io/repos/github/dev7ch/luya-ext-slick/badge.svg?branch=master)](https://coveralls.io/github/dev7ch/luya-ext-slick?branch=master)[![Code Quality](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/badges/quality-score.png?b=master&l=quality)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/dev7ch/luya-ext-slick/badge.svg?branch=master)](https://coveralls.io/github/dev7ch/luya-ext-slick?branch=master)
+[![Code Quality](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/badges/quality-score.png?b=master&l=quality)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/?branch=master)
 [![Total Downloads](https://poser.pugx.org/dev7ch/luya-ext-slick/downloads)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 [![License](https://poser.pugx.org/dev7ch/luya-ext-slick/license)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 
