@@ -22,8 +22,8 @@ install:
 
 before_script:
   - mkdir assets
-  - cp tests/data/slickConfig.php  slickConfig.php
-  - cp tests/data/slickConfig.json  slickConfig.json
+  - cp tests/data/slickConfig.php  /home/travis/build/slickConfig.php
+  - cp tests/data/slickConfig.json  /home/travis/build/slickConfig.json
   - mysql -e 'create database myapp_test;'
   - mysql -u root myapp_test < tests/data/sql/1.0.0.sql
 
