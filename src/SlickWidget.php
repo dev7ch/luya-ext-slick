@@ -53,7 +53,7 @@ class SlickWidget extends \luya\base\Widget
         } else {
 
             $this->slickConfig = $this->slickConfigWidget;
-            
+
         }
 
         $this->view->registerJs(

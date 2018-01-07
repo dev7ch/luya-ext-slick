@@ -78,6 +78,22 @@ $images = $this->extraValue('images'); // Array of images width additional field
 
 ```
 
+Or you could load the Slick.js configs from a file like this:
+
+```php
+
+<?= SlickWidget::widget([
+    'images'            => $images,
+    'slickConfigFile' => 'path/to/yourConfig.php'  // or a .json file
+]);
+?>
+
+```
+
+The beginning of the path points to your project root folder (not web root, which is directory `public_html`).
+
+> Using `slickConfigFile` will override `slickConfigWidget` if it is configured.
+
 
 Due this widget supports adaptive images, below a little explanation of the logic behind.
 
