@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/dev7ch/luya-ext-slick/v/stable)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
 [![Coverage Status](https://coveralls.io/repos/github/dev7ch/luya-ext-slick/badge.svg?branch=master)](https://coveralls.io/github/dev7ch/luya-ext-slick?branch=master)
-[![Code Quality](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/badges/quality-score.png?b=master&l=quality)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/?branch=master)
+[![Code Quality](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dev7ch/luya-ext-slick/?branch=master)
 [![Total Downloads](https://poser.pugx.org/dev7ch/luya-ext-slick/downloads)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 [![License](https://poser.pugx.org/dev7ch/luya-ext-slick/license)](https://packagist.org/packages/dev7ch/luya-ext-slick)
 
@@ -167,10 +167,10 @@ composer require bower-asset/picturefill:~3.0.0
 
 To run the PHPUnit Test the directory 'assets' needs to be created in the root folder of this extension, e.g. `luya-env-dev/repos/luya-ext-slick/assets`.
 
-> The `assets` directory is in charge for test execution only and should  **not** be tracked by your VCS.
+> The `assets` directory is in charge for test execution only and should  **not** be tracked and commited by your VCS.
 
-## Roadmap
+## Disired next features
 
 - adding all slick js options to admin UI block cfgs
+- adding all slick js aoptions as properties to the widget
 - create admin UI block view
-- extend widget to work well with slick configs stiored .json or .php files.
