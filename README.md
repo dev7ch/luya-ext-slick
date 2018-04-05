@@ -160,6 +160,7 @@ For usage of this repo inside your [LUYA env dev](https://github.com/luyadev/luy
 composer require bower-asset/slick-carousel:~1.8.0
 composer require bower-asset/picturefill:~3.0.0
 ```
+
 ## Unit Tests
 
 1.) Create `assets` directory.
