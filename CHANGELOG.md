@@ -3,9 +3,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Released]
 
-## [1.1.2] - 2018-05-10
+## [1.1.3] - 2018-05-10
 ### Added
 - Russian translation 
+
+## [1.1.2] - 2018-03-05
+### Added
+- Docs correction
 
 ## [1.1.1] - 2018-01-02
 ### Added
