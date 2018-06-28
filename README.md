@@ -164,14 +164,16 @@ composer require bower-asset/picturefill:~3.0.0
 ## Unit Tests
 
 1.) Create `assets` directory.  
-2.) Run `./vendor/bin/phpunit tests/SlickBlockTest.php`, make sure compsor installed all needed dependencies correctly.
+2.) Run `./vendor/bin/phpunit tests/SlickBlockTest.php`
 
-To run the PHPUnit Test the directory 'assets' needs to be created in the root folder of this extension, e.g. `luya-env-dev/repos/luya-ext-slick/assets`.
+Make sure composer installed all needed dependencies correctly inside your corresponding `vendor` folder
 
-> The `assets` directory is in charge for test execution only and should  **not** be tracked and commited by your VCS.
+To run the PHPUnit Test the directory `assets/` needs to be created in the **root folder of this extension**, e.g. `luya-env-dev/repos/luya-ext-slick/assets`.
+
+> The `assets/` directory is in charge for test execution only and should  **not** be tracked or commited by your VCS.
 
 ## Disired next features
 
 - adding all slick js options to admin UI block cfgs
-- adding all slick js aoptions as properties to the widget
+- adding all slick js options as properties to the widget
 - create admin UI block view
