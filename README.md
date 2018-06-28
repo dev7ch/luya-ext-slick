@@ -44,11 +44,11 @@ This LUYA extension is usable in two ways:
 - As draggable block out of the box in the LUYA admin UI.
 - As PHP widget in custom view files with custom Slick.js settings.
 
-### Block
+### 1. Block Usage
 
 Simply drag and drop the block in the pages section in the admin UI to the desired place and add content to your new slick slider.
 
-### Widget
+### 2. Widget Usage
 
 This extension is shipped as widget which means it can the reused in own custom views from modules or blocks.
 
