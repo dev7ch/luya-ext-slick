@@ -163,7 +163,7 @@ composer require bower-asset/picturefill:~3.0.0
 
 ## Unit Tests
 
-1.) Create `assets` directory.
+1.) Create `assets` directory.  
 2.) Run `./vendor/bin/phpunit tests/SlickBlockTest.php`, make sure compsor installed all needed dependencies correctly.
 
 To run the PHPUnit Test the directory 'assets' needs to be created in the root folder of this extension, e.g. `luya-env-dev/repos/luya-ext-slick/assets`.
