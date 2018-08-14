@@ -31,11 +31,14 @@
 
     "autoload" : {
         "psr-4" : {
-            "dev7ch\\slick\\" : "src/",
+            "dev7ch\\slick\\" : "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
             "dev7ch\\slick\\tests\\" : "tests/"
         }
     },
-
     "config": {
         "fxp-asset" : {
             "pattern-skip-version": "(-build|-patch)",
