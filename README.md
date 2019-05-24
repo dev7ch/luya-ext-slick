@@ -83,7 +83,7 @@ Or you could load the Slick.js configs from a file like this:
 ```php
 
 <?= SlickWidget::widget([
-    'images'            => $images,
+    'images' => $images,
     'slickConfigFile' => 'path/to/yourConfig.php'  // or a .json file
 ]);
 ?>
@@ -172,7 +172,7 @@ To run the PHPUnit Test the directory `assets/` needs to be created in the **roo
 
 > The `assets/` directory is in charge for test execution only and should  **not** be tracked or commited by your VCS.
 
-## Disired next features
+## On the horizon
 
 - adding all slick js options to admin UI block cfgs
 - adding all slick js options as properties to the widget
